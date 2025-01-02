@@ -12,8 +12,8 @@ public class SaudacaoController {
 	private final AtomicLong counter = new AtomicLong();
 	
 	@RequestMapping("/saudacao")
-	public Saudacao saudacao ( @RequestParam(value = "pessoa", defaultValue = "World") String pessoa) {
+	public Saudacao saudacao ( @RequestParam(value = "name", defaultValue = "World") String name) {
 		
-		return new Saudacao(counter.incrementAndGet(), String.format(template, pessoa));
+		return new Saudacao(counter.incrementAndGet(), String.format(template, name));
 	}
 }
